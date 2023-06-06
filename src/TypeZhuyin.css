@@ -1,0 +1,84 @@
+#container{
+    alignment: center;
+    text-align: center;
+}
+
+#practiceText{
+    font-family: Zhuyin;
+    font-size: 50px;
+    color: grey;
+}
+
+
+#guessInput{
+    width:10px;
+}
+
+.key {
+    width: 50px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #FFC107;
+    display: inline-block;
+    border-style: solid;
+    padding-top: 10px;
+    position: sticky;
+    font-weight: bold;
+    margin: 1px;
+}
+
+.SKey {
+    background-color: #61dafb;
+    align-content: center;
+}
+
+#TabSK {
+    width: 90px;
+}
+
+#BackspaceSK {
+    width: 90px;
+}
+
+#EnterSK {
+    width: 97px
+}
+
+#CapsLockSK {
+    width: 97px;
+}
+
+#ShiftLeftSK {
+    width: 125px;
+}
+
+#ShiftRightSK {
+    width: 125px;
+}
+
+#r1{
+    padding-bottom:0px;
+}
+
+#r2{
+    padding-top:0px;
+}
+
+#r3{
+
+}
+
+#keyboardBg{
+    width:1000px;
+    alignment: center;
+    background-color: #fe4a49;
+    margin: auto;
+}
+@font-face {
+    font-family: "Zhuyin";
+    src: url("wp010-05.ttf");
+}
+
+.simple-keyboard.hint.myTheme {
+    font-family: "Zhuyin";
+}
