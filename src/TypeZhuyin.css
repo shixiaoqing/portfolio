@@ -1,7 +1,10 @@
 #container{
-    alignment: center;
     text-align: center;
     position: relative;
+    white-space: nowrap;
+    width: 90%;
+    aspect-ratio: 10/3;
+
 }
 
 #practiceText{
@@ -22,16 +25,20 @@
 
 
 .key {
-    width: 50px;
-    height: 40px;
+    width: 6%;
+    aspect-ratio: 1;
     border-radius: 4px;
     background-color: #ffffff;
     display: inline-block;
     border-style: solid;
-    padding-top: 10px;
+    border-width: 1px;
     position: sticky;
     font-weight: bold;
-    margin: 1px;
+    padding-top: 1%;
+    box-sizing: border-box;
+    margin-bottom: 1px;
+    margin-right: 1px;
+    font-size:15px;
 }
 
 .SKey {
@@ -40,34 +47,40 @@
 }
 
 #textCursor {
-    position: absolute;
-    top: 1px;
-    right: 710px;
+    position: relative;
+    top: 70px;
+    right: 200px;
     color:#282c34;
 }
 
 #TabSK {
-    width: 90px;
+    width: 12%;
+    aspect-ratio: 2/1;
 }
 
 #BackspaceSK {
-    width: 90px;
+    width: 12%;
+    aspect-ratio: 2/1;
 }
 
 #EnterSK {
-    width: 97px
+    width: 12%;
+    aspect-ratio: 2/1;
 }
 
 #CapsLockSK {
-    width: 97px;
+    width: 12%;
+    aspect-ratio: 2/1;
 }
 
 #ShiftLeftSK {
-    width: 125px;
+    width: 15%;
+    aspect-ratio: 2.5/1;
 }
 
 #ShiftRightSK {
-    width: 125px;
+    width: 15%;
+    aspect-ratio: 2.5/1;
 }
 
 #r1{
@@ -83,28 +96,23 @@
 }
 
 #keyboardBg{
-    width:810px;
-    height:220px;
+    width:50%;
+    aspect-ratio: 4/1;
     alignment: center;
     background-color: #EDDBDB;
     padding-top: 5px;
-    margin: auto;
+    margin: 0 auto;
     border-style: solid;
     border-color: #B6A9A9;
     border-radius: 2px;
     position: relative;
+
 }
 @font-face {
     font-family: "Zhuyin";
     src: url("wp010-05.ttf");
 }
 
-.textCursor {
-    z-index: 1;
-    font-size: larger;
-    position: absolute;
-    top: 90px;
-}
 
 .simple-keyboard.hint.myTheme {
     font-family: "Zhuyin";
