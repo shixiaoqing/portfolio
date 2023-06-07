@@ -1,28 +1,33 @@
 #container{
     text-align: center;
-    position: relative;
+    position: absolute;
     white-space: nowrap;
-    width: 90%;
-    aspect-ratio: 10/3;
-
+    width: 100%;
+    align-content: center;
 }
 
 #practiceText{
     font-family: Zhuyin;
     position: relative;
-    align-content: center;
     alignment:center;
     font-size: 50px;
     color: grey;
+    width:800px;
+    aspect-ratio: 10/1;
+    align-content: center;
+    left: 30%;
+    margin-left: -50px;
 }
 
 
-#guessInput{
-    width:10px;
-    z-index: 0;
-    position: relative;
+#moreInfo {
+    right: 0;
 }
 
+#githubLogo{
+    role: "img";
+    height: 20px;
+}
 
 .key {
     width: 6%;
@@ -47,9 +52,9 @@
 }
 
 #textCursor {
-    position: relative;
-    top: 70px;
-    right: 200px;
+    position: absolute;
+    left: 34%;
+    top: 10px;
     color:#282c34;
 }
 
@@ -66,54 +71,51 @@
 #EnterSK {
     width: 12%;
     aspect-ratio: 2/1;
+    margin-left: 1px;
 }
 
 #CapsLockSK {
     width: 12%;
     aspect-ratio: 2/1;
+    margin-right: 1px;
 }
 
 #ShiftLeftSK {
     width: 15%;
     aspect-ratio: 2.5/1;
+    margin-right: 1px;
 }
 
 #ShiftRightSK {
     width: 15%;
     aspect-ratio: 2.5/1;
-}
-
-#r1{
-    padding-bottom:0px;
-}
-
-#r2{
-    padding-top:0px;
-}
-
-#r3{
-
+    margin-left: 2px;
 }
 
 #keyboardBg{
-    width:50%;
+    width:800px;
     aspect-ratio: 4/1;
-    alignment: center;
     background-color: #EDDBDB;
     padding-top: 5px;
-    margin: 0 auto;
     border-style: solid;
     border-color: #B6A9A9;
     border-radius: 2px;
     position: relative;
-
+    align-content: center;
+    alignment:center;
+    left: 30%;
+    margin-left: -50px;
 }
 @font-face {
     font-family: "Zhuyin";
     src: url("wp010-05.ttf");
 }
 
-
-.simple-keyboard.hint.myTheme {
-    font-family: "Zhuyin";
+@keyframes moveCursor {
+    from {
+        -webkit-transform: translate(0, 0);
+    }
+    to {
+        -webkit-transform: translate3d(6%, 0, 0);}
 }
+

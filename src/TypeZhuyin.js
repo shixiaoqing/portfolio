@@ -5,7 +5,6 @@ import {Keyboard} from './Keyboard'
 import {KeyMappings} from "./Keyboard";
 
 class TypeZhuyin extends Component {
-    //Initialize State
     constructor() {
         super();
         this.state = {gameMode: 0, score: 0, keyboardOn: 1, bpmf: new KeyMappings(), index: 0, time: 0};
@@ -21,12 +20,16 @@ class TypeZhuyin extends Component {
             element.style.backgroundColor = '#CACACA'
         }
         let query = this.state.bpmf.query
-        if(e.code === query[this.state.index]['code']){
-            document.getElementById((this.state.index).toString().concat(e.code)).style.color = 'black'
-            this.setState({index: this.state.index + 1})
+        if (this.state.index >= 10) {
+            this.resetCharacters()
         }
-        else{
+        else {
+            if (e.code === query[this.state.index]['code']) {
+                document.getElementById((this.state.index).toString().concat(e.code)).style.color = 'black'
+                this.setState({index: this.state.index + 1})
+            } else {
 
+            }
         }
     }
 
@@ -49,22 +52,9 @@ class TypeZhuyin extends Component {
         this.setState({gameMode: mode})
     }
 
-    handleEnterInput(e) {
-        if (e.key === 'Enter') {
-            let sentenceInput = document.getElementById("practiceText").textContent;
-            if (sentenceInput === this.sentence){
-                prompt("Yay")
-            }
-            else {
-                prompt("Boo")
-            }
-        }
-    }
-
     renderQuery(){
         let query = this.state.bpmf.query
         let queryTest = []
-        queryTest.push(<div id={"textCursor"}>_</div>)
         for (let i = 0; i < query.length; i++) {
             queryTest.push(<span id={(i).toString().concat(query[i].code)}>{query[i]['character']}</span>)
         }
@@ -72,22 +62,24 @@ class TypeZhuyin extends Component {
     }
 
     memorizationPractice(){
-        let score = this.state.score;
         return(
-            <div id={"container"}>
+            <div>
                 <div id={"practiceText"}>{this.renderQuery()}</div>
             </div>
         );
     }
 
+    resetCharacters(){
 
-    memorizationGame(){
-        return (
-            <div id={"container"}>
-                <p id={"practiceText"}>{this.sentence}</p>
-                <Keyboard/>
-            </div>
-        )
+        const query = this.state.bpmf.query
+        console.log(query)
+        for (let i = 0; i < 10; i++){
+            let e = query[i]
+            document.getElementById((i).toString().concat(e.code)).style.color = 'grey'
+        }
+        this.state.bpmf.generateQuery()
+        this.setState({index: 0})
+
     }
 
     gameScreen(){
@@ -103,10 +95,11 @@ class TypeZhuyin extends Component {
         }
         else if (gameMode == 1) {
             return (
-                <div id={"container"}>
-                    <p>{this.memorizationPractice()}</p>
-                    <Keyboard/>
-
+                <div>
+                    <div id={"container"}>
+                        <p>{this.memorizationPractice()}</p>
+                        <Keyboard/>
+                    </div>
                 </div>
             )
         }
