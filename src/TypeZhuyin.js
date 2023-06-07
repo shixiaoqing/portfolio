@@ -8,10 +8,9 @@ class TypeZhuyin extends Component {
     //Initialize State
     constructor() {
         super();
-        this.state = {gameMode: 0, score: 0, keyboardOn: 1, bpmf: new KeyMappings(), index: 0};
+        this.state = {gameMode: 0, score: 0, keyboardOn: 1, bpmf: new KeyMappings(), index: 0, time: 0};
         this._handleKeyDown = this._handleKeyDown.bind(this)
         this.state.bpmf.generateQuery()
-
 
     }
 
@@ -19,7 +18,7 @@ class TypeZhuyin extends Component {
         let element = document.getElementById(e.code)
         if(typeof(element) != 'undefined' && element != null && typeof(this.state) != 'undefined') {
 
-            element.style.backgroundColor = '#1E88E5'
+            element.style.backgroundColor = '#CACACA'
         }
         let query = this.state.bpmf.query
         if(e.code === query[this.state.index]['code']){
@@ -35,7 +34,7 @@ class TypeZhuyin extends Component {
     _handleKeyRelease(e){
         let element = document.getElementById(e.code)
         if(typeof(element) != 'undefined' && element != null){
-            element.style.backgroundColor = '#FFC107'
+            element.style.backgroundColor = '#FFFFFF'
         }
     }
 
@@ -65,6 +64,7 @@ class TypeZhuyin extends Component {
     renderQuery(){
         let query = this.state.bpmf.query
         let queryTest = []
+        queryTest.push(<div id={"textCursor"}>_</div>)
         for (let i = 0; i < query.length; i++) {
             queryTest.push(<span id={(i).toString().concat(query[i].code)}>{query[i]['character']}</span>)
         }

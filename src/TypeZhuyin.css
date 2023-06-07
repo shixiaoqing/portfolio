@@ -1,10 +1,14 @@
 #container{
     alignment: center;
     text-align: center;
+    position: relative;
 }
 
 #practiceText{
     font-family: Zhuyin;
+    position: relative;
+    align-content: center;
+    alignment:center;
     font-size: 50px;
     color: grey;
 }
@@ -12,13 +16,16 @@
 
 #guessInput{
     width:10px;
+    z-index: 0;
+    position: relative;
 }
+
 
 .key {
     width: 50px;
     height: 40px;
     border-radius: 4px;
-    background-color: #FFC107;
+    background-color: #ffffff;
     display: inline-block;
     border-style: solid;
     padding-top: 10px;
@@ -28,8 +35,15 @@
 }
 
 .SKey {
-    background-color: #61dafb;
+    background-color: #9F9F9F;
     align-content: center;
+}
+
+#textCursor {
+    position: absolute;
+    top: 1px;
+    right: 710px;
+    color:#282c34;
 }
 
 #TabSK {
@@ -69,14 +83,27 @@
 }
 
 #keyboardBg{
-    width:1000px;
+    width:810px;
+    height:220px;
     alignment: center;
-    background-color: #fe4a49;
+    background-color: #EDDBDB;
+    padding-top: 5px;
     margin: auto;
+    border-style: solid;
+    border-color: #B6A9A9;
+    border-radius: 2px;
+    position: relative;
 }
 @font-face {
     font-family: "Zhuyin";
     src: url("wp010-05.ttf");
+}
+
+.textCursor {
+    z-index: 1;
+    font-size: larger;
+    position: absolute;
+    top: 90px;
 }
 
 .simple-keyboard.hint.myTheme {
