@@ -11,7 +11,6 @@ press any key again to generate a new set of characters.
 
 
 ## Tasks Roadmap
-* Open in Github link
 * Proper documentation
 * Ability to toggle a 'hint' mode that will highlight the key if the player doesn't press they key within a given time.
 * Timer and ending screen with statistics like CPM.

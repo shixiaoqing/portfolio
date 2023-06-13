@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 
+
 class KeyMappings {
     constructor() {
         this.mapping = [{'character': 'ㄅ', 'key': '1', 'code': 'Digit1', 'sound': 'b'},
@@ -159,16 +160,16 @@ class Keyboard extends Component{
         r4.push(<Key mapping={this.miscKeys[11]}/>)
         return(
             <div id={"keyboardBg"}>
-                <div id={"r1"}>
+                <div className={"rows"}>
                     {r1}
                 </div>
-                <div id={"r2"}>
+                <div className={"rows"}>
                     {r2}
                 </div>
-                <div id={"r3"}>
+                <div className={"rows"}>
                     {r3}
                 </div>
-                <div id={"r4"}>
+                <div className={"rows"}>
                     {r4}
                 </div>
 

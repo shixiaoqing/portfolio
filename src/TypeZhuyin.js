@@ -1,6 +1,5 @@
 import React, {Component, useLayoutEffect} from 'react';
 import './TypeZhuyin.css';
-import "./index.css";
 import {Keyboard} from './Keyboard'
 import {KeyMappings} from "./Keyboard";
 
@@ -82,6 +81,10 @@ class TypeZhuyin extends Component {
 
     }
 
+    viewGithub(){
+        window.open("https://github.com/shixiaoqing/portfolio/tree/master", "_blank", "noreferrer");
+    }
+
     gameScreen(){
         let gameMode = 1
         if (gameMode == 0) {
@@ -96,6 +99,9 @@ class TypeZhuyin extends Component {
         else if (gameMode == 1) {
             return (
                 <div>
+                    <div id={"moreInfo"}>
+                        <button id={"githubButton"} onClick={this.viewGithub}> <img id={"githubLogo"} src={process.env.PUBLIC_URL + '/github-mark.svg'}/> Github Repository</button>
+                    </div>
                     <div id={"container"}>
                         <p>{this.memorizationPractice()}</p>
                         <Keyboard/>
