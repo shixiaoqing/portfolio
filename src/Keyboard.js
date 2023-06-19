@@ -1,6 +1,5 @@
 import React, {Component} from "react";
 
-
 class KeyMappings {
     constructor() {
         this.mapping = [{'character': 'ㄅ', 'key': '1', 'code': 'Digit1', 'sound': 'b'},
@@ -99,13 +98,17 @@ class Key extends Component{
     render(){
         if (this.character === this.letter){
             return(
-                <span id={this.code.concat('SK')} className={"SKey key"}>{this.character}<sup></sup></span>
+                <span id={this.code.concat('SK')} className={"SKey key"}>
+                    <span>{this.character}<sup></sup></span>
+                </span>
             )
         }
 
         else if (this.hint){
             return(
-                <span id={this.code} className={"key"}>{this.letter.toUpperCase()}<sup>{this.character}</sup></span>
+                <span id={this.code} className={"key"}>
+                    <span className={"keyCharacter"}>{this.letter.toUpperCase()}</span><sup>{this.character}</sup>
+                </span>
 
             )
         }
