@@ -58,6 +58,50 @@ class KeyMappings {
             {character: 'Shift', key: 'Shift', code: 'ShiftRight', sound: null}
 
         ]
+        this.mappingIndex = {
+            'ㄅ': 0,
+            'ㄉ': 1,
+            'ˇ': 2,
+            'ˋ': 3,
+            'ㄓ': 4,
+            'ˊ': 5,
+            '˙': 6,
+            'ㄚ': 7,
+            'ㄞ': 8,
+            'ㄢ': 9,
+            'ㄦ': 10,
+            'ㄆ': 11,
+            'ㄊ': 12,
+            'ㄍ': 13,
+            'ㄐ': 14,
+            'ㄔ': 15,
+            'ㄗ': 16,
+            'ㄧ': 17,
+            'ㄛ': 18,
+            'ㄟ': 19,
+            'ㄣ': 20,
+            'ㄇ': 21,
+            'ㄋ': 22,
+            'ㄎ': 23,
+            'ㄑ': 24,
+            'ㄕ': 25,
+            'ㄘ': 26,
+            'ㄨ': 27,
+            'ㄜ': 28,
+            'ㄠ': 29,
+            'ㄤ': 30,
+            'ㄈ': 31,
+            'ㄌ': 32,
+            'ㄏ': 33,
+            'ㄒ': 34,
+            'ㄖ': 35,
+            'ㄙ': 36,
+            'ㄩ': 37,
+            'ㄝ': 38,
+            'ㄡ': 39,
+            'ㄥ': 40
+        }
+
         this.query = []
     }
 
@@ -81,6 +125,13 @@ class KeyMappings {
         return queryString
     }
 
+    /**
+     * Given the key (a zhuyin character) return the mapping
+     * @param key
+     */
+    getMapping(key) {
+        return this.mapping[this.mappingIndex[key]]
+    }
 
 
 }

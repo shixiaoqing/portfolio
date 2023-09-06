@@ -17,7 +17,6 @@ body {
 }
 
 #practiceText{
-    font-family: Zhuyin;
     position: relative;
     alignment:center;
     font-size: 50px;
@@ -195,4 +194,18 @@ body {
 
 #settings {
 
+}
+
+.char_char {
+}
+
+.char_zhuyin {
+    font-size: medium;
+    padding-top: 0px;
+}
+
+.char_guide {
+    margin-bottom: 0px;
+    display:inline-block;
+    padding-right: 20px;
 }
