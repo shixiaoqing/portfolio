@@ -103,9 +103,10 @@ class TypeZhuyin extends Component {
         }
         else {
             for (let i = 0; i < this.state.subIndex; i++){
-                this.setState({index: this.state.index -= 1})
-                document.getElementById((this.state.index).toString().concat("_queryList")).style.color = '#CACACA'
+                this.setState({index: this.state.index - 1})
+                document.getElementById((this.state.index).toString().concat("_queryList")).style.color = 'grey'
             }
+            this.setState({subIndex: 0})
         }
     }
 
@@ -166,7 +167,7 @@ class TypeZhuyin extends Component {
         let zhuyin_display = []
         // let char of sentence
         for (let i = 0; i < queryList.length; i++) {
-            if (typeof(queryList[i]) === "string" && queryList[i].includes("/")){
+            if (typeof(queryList[i]) === "string"){
                 let char = queryList[i]
                 display.push(<div class = {"char_guide"}><div class = {"char_char"} id = {i.toString().concat("_queryList")}>{char}</div><div class ={"char_zhuyin"}>{sub}</div></div>)
                 sub = []
@@ -194,7 +195,7 @@ class TypeZhuyin extends Component {
             for (let subChar of sub){
                 query.push(this.state.bpmf.getMapping(subChar))
             }
-            query.push("/".concat(sentence[i]))
+            query.push(sentence[i])
         }
         this.state.queryList = query
     }
