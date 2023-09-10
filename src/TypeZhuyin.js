@@ -39,7 +39,7 @@ class TypeZhuyin extends Component {
 
             element.style.backgroundColor = '#CACACA'
         }
-        if (this.state.index >= 10) {
+        if (this.state.index == this.state.queryList.length) {
             this.resetCharacters()
         }
         else {
@@ -95,18 +95,20 @@ class TypeZhuyin extends Component {
                 this.setState((state) => ({subIndex: state.subIndex + 1}))
             }
             console.log(typeof(query[this.state.index]))
-            if (typeof(query[this.state.index]) == "string"){
+            if (typeof(query[this.state.index + 1]) == "string"){
                 console.log("we're supposed to be here")
                 // Set next index to black, indicating the word has completed
+                document.getElementById((this.state.index + 1).toString().concat("_queryList")).style.color = 'black'
                 this.setState((state) => ({index: state.index + 1}))
-                document.getElementById((this.state.index).toString().concat("_queryList")).style.color = 'black'
                 this.setState((state) => ({subIndex: 0}))
             }
         }
         else {
-            for (let i = 0; i < this.state.subIndex; i++){
+            for (let i = 1; i <= this.state.subIndex; i++){
+                document.getElementById((this.state.index - i).toString().concat("_queryList")).style.color = 'gray'
                 this.setState((state) => ({index: state.index - 1}))
-                document.getElementById((this.state.index).toString().concat("_queryList")).style.color = 'red'
+                console.log("Resetting state index")
+                console.log(this.state.index)
             }
             this.setState({subIndex: 0})
         }
@@ -211,14 +213,15 @@ class TypeZhuyin extends Component {
      * Resets the characters on screen and generates new characters to replace them.
      */
     resetCharacters(){
-        const query = this.state.bpmf.query
-        console.log(query)
-        for (let i = 0; i < 10; i++){
-            let e = query[i]
-            document.getElementById((i).toString().concat(e.code)).style.color = 'grey'
-        }
-        this.state.bpmf.generateQuery()
-        this.setState({index: 0})
+
+        // const query = this.state.bpmf.query
+        // console.log(query)
+        // for (let i = 0; i < 10; i++){
+        //     let e = query[i]
+        //     document.getElementById((i).toString().concat(e.code)).style.color = 'grey'
+        // }
+        // this.state.bpmf.generateQuery()
+        // this.setState({index: 0})
 
     }
 
