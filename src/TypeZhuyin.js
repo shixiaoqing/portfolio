@@ -84,27 +84,29 @@ class TypeZhuyin extends Component {
 
     checkAnswer(code){
         let query = this.state.queryList
-        console.log(query[this.state.index])
+        console.log(query[this.state.index]['character'])
         if (code === query[this.state.index]['code']) {
             // Turn character another color
             document.getElementById((this.state.index).toString().concat("_queryList")).style.color = 'black'
-            this.setState({index: this.state.index + 1})
+            console.log(this.state.index)
+            this.setState((state) => ({index: state.index + 1}))
             // If we are in the typing word game mode
             if (this.state.gameMode === 1){
-                this.setState({subIndex: this.state.subIndex + 1})
+                this.setState((state) => ({subIndex: state.subIndex + 1}))
             }
-
+            console.log(typeof(query[this.state.index]))
             if (typeof(query[this.state.index]) == "string"){
+                console.log("we're supposed to be here")
                 // Set next index to black, indicating the word has completed
-                this.setState({index: this.state.index + 1})
+                this.setState((state) => ({index: state.index + 1}))
                 document.getElementById((this.state.index).toString().concat("_queryList")).style.color = 'black'
-                this.setState({subIndex: 0})
+                this.setState((state) => ({subIndex: 0}))
             }
         }
         else {
             for (let i = 0; i < this.state.subIndex; i++){
-                this.setState({index: this.state.index - 1})
-                document.getElementById((this.state.index).toString().concat("_queryList")).style.color = 'grey'
+                this.setState((state) => ({index: state.index - 1}))
+                document.getElementById((this.state.index).toString().concat("_queryList")).style.color = 'red'
             }
             this.setState({subIndex: 0})
         }
