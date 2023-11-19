@@ -108,7 +108,7 @@ class KeyMappings {
     generateQuery(){
         this.query = []
         for (let i = 0; i < 10; i++) {
-            let rand = Math.floor(Math.random() * 37);
+            let rand = Math.floor(Math.random() * 41);
             this.query.push(this.mapping[rand]);
         }
     }

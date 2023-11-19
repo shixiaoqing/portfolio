@@ -201,6 +201,7 @@ body {
 
 .char_zhuyin {
     font-size: medium;
+    font-weight:bold;
     padding-top: 0px;
 }
 
