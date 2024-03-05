@@ -1,11 +1,3 @@
-#container{
-    text-align: center;
-    white-space: nowrap;
-    width: 100%;
-    align-content: center;
-    z-index: 0;
-}
-
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,68 +5,38 @@ body {
     sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: white;
-}
 
-#practiceText{
-    position: relative;
-    alignment:center;
-    font-size: 50px;
-    color: grey;
-    width:800px;
-    aspect-ratio: 10/1;
-    align-content: center;
-    left: 30%;
-    margin-left: -50px;
-}
 
+}
 
 #moreInfo {
     float: right;
 }
 
-#githubButton{
-    align-items: center;
-    background-color: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: .25rem;
-    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-    box-sizing: border-box;
-    color: rgba(0, 0, 0, 0.85);
-    cursor: pointer;
-    display: inline-flex;
-    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    justify-content: center;
-    line-height: 1.25;
-    margin: 0;
-    min-height: 3rem;
-    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-    position: relative;
-    text-decoration: none;
-    transition: all 250ms;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: baseline;
-    width: auto;
-    z-index: 1;
-}
 
 #githubLogo{
     role: "img";
-    height: 20px;
+    height: 15px;
     margin-right: 6px;
 }
 
+
+.content {
+    width:100%;
+    height:93vh;
+}
+
+.content button {
+    background: none;
+    padding: 5px;
+    border-radius: 2px;
+}
+
 .key {
-    width: 6%;
-    position: relative;
+    width: 50px;
     aspect-ratio: 1;
     border-radius: 4px;
     background-color: #ffffff;
-    display: inline-block;
     box-sizing: border-box;
     border-style: solid;
     border-width: 1px;
@@ -83,7 +45,6 @@ body {
 
 .rows {
     display:flex;
-    margin-left: 8%;
 }
 
 .keyCharacter {
@@ -98,98 +59,99 @@ body {
     margin-top: 0px;
 }
 
-#textCursor {
-    position: absolute;
-    left: 34%;
-    top: 10px;
-    color:#282c34;
+#practiceText{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start:1;
+    grid-row-end:2;
+    font-size: 50px;
+    color: grey;
+    left:0;
+    right:0;
+    top:20%;
+    margin-bottom:10px;
+    height: 100px;
+    align-content: center;
+    align-self: center;
+    text-align: center;
+
+}
+
+#container{
+    grid-template-columns: 25px 500px 25px;
+    grid-template-rows: 100px 500px;
+    text-align: center;
+    white-space: nowrap;
+    width: 100%;
+    z-index: 0;
+    position: fixed;
+
+
 }
 
 #TabSK {
-    width: 12%;
+    width: 100px;
     aspect-ratio: 2/1;
     top: 50%
 }
 
 #BackspaceSK {
-    width: 12%;
+    width: 100px;
     aspect-ratio: 2/1;
 }
 
 #EnterSK {
-    width: 12%;
+    width: 100px;
     aspect-ratio: 2/1;
 }
 
 #CapsLockSK {
-    width: 12%;
+    width: 100px;
     aspect-ratio: 2/1;
 }
 
 #ShiftLeftSK {
-    width: 15%;
+    width: 125px;
     aspect-ratio: 2.5/1;
 }
 
 #ShiftRightSK {
-    width: 15%;
+    width: 125px;
     aspect-ratio: 2.5/1;
 }
 
-#keyboardBg{
-    width:790px;
-    background-color: #EDDBDB;
-    border-style: solid;
-    border-color: #B6A9A9;
-    border-radius: 2px;
-    position: relative;
-    align-content: center;
-    alignment:center;
+
+.keyboard {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    grid-column-end: 3;
+    background-color:black;
+    border-radius: 4px;
     margin:auto;
+    width:780px;
+    left:0;
+    padding-top:10px;
+    padding-bottom:15px;
+    right:0;
+    z-index:-5;
+    aspect-ratio: 4/1;
+}
+
+.keyboard .front {
+    width:750px;
+
+    margin: auto;
+    position:absolute;
+    z-index: 5;
+    left:0;
+    right:0;
+    background-color:black;
 
 }
 
 @font-face {
     font-family: "Zhuyin";
     src: url("wp010-05.ttf");
-}
-
-@keyframes moveCursor {
-    from {
-        -webkit-transform: translate(0, 0);
-    }
-    to {
-        -webkit-transform: translate3d(6%, 0, 0);}
-}
-
-.rows1 {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 100/1;
-    background-color: red;
-}
-
-.rows2{
-
-}
-
-.githubButton:hover,
-.githubButton:focus {
-    border-color: rgba(0, 0, 0, 0.15);
-    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-    color: rgba(0, 0, 0, 0.65);
-}
-
-.githubButton:hover {
-    transform: translateY(-1px);
-}
-
-.githubButton:active {
-    background-color: #F0F0F1;
-    border-color: rgba(0, 0, 0, 0.15);
-    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
-    color: rgba(0, 0, 0, 0.65);
-    transform: translateY(0);
 }
 
 #settings {
@@ -210,3 +172,4 @@ body {
     display:inline-block;
     padding-right: 20px;
 }
+

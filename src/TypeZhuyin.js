@@ -39,7 +39,6 @@ class TypeZhuyin extends Component {
         this.state = {gameMode: Mode.Character, score: 0, keyboardOn: 1, bpmf: new KeyMappings(), index: 0, totalLen: 0, guess: false,
         queryList: [], subIndex: 0, assist: Assist.Hint};
         this._handleKeyDown = this._handleKeyDown.bind(this)
-
     }
 
     /**
@@ -84,7 +83,7 @@ class TypeZhuyin extends Component {
                 // Set next index to black, indicating the word has completed
                 document.getElementById((this.state.index + 1).toString().concat("_queryList")).style.color = 'black'
                 this.setState((state) => ({index: state.index + 1}))
-                this.setState((state) => ({subIndex: 0}))
+                this.setState(() => ({subIndex: 0}))
             }
         }
         else {
@@ -98,9 +97,10 @@ class TypeZhuyin extends Component {
             this.setState({subIndex: 0})
             // This section is for the character mode
             if (this.state.gameMode === Mode.Character && this.state.assist === Assist.Hint){
-                //document.getElementById(query[this.state.index]['code']).style.backgroundColor = 'red';
+                document.getElementById(query[this.state.index]['code']).style.backgroundColor = 'red';
             }
         }
+
     }
 
     _handleKeyRelease(e){
@@ -206,6 +206,7 @@ class TypeZhuyin extends Component {
             newGameMode = Mode.Character
         }
         else{
+            document.getElementById(this.state.queryList[this.state.index]['code']).style.backgroundColor = 'white';
             newGameMode = Mode.Word
         }
 
@@ -254,7 +255,7 @@ class TypeZhuyin extends Component {
                         <Keyboard/>
                     </div>
                     <div id={"moreInfo"}>
-                        <button id={"githubButton"} onClick={this.viewGithub}> <img id={"githubLogo"} src={process.env.PUBLIC_URL + '/github-mark.svg'}/> Github Repository</button>
+                        {/*<button id={"githubButton"} onClick={this.viewGithub}> <img id={"githubLogo"} src={process.env.PUBLIC_URL + '/github-mark.svg'}/> Github Repository</button>*/}
                     </div>
                 </div>
             )
@@ -269,7 +270,10 @@ class TypeZhuyin extends Component {
     }
 
     render(){
-        return(this.gameScreen());
+        return(
+            <div class={"content"}>
+                {this.gameScreen()}
+            </div>);
     }
 }
 

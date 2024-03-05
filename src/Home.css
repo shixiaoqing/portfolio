@@ -1,92 +1,93 @@
-#menuBar {
-    position: sticky;
-    alignment: top;
-    height: 40px;
-    background-color: red;
-}
-
-html{
-    min-height: 100%;
-    overflow: hidden;
-}
-
 body{
-    height: calc(100vh - 8em);
-    padding: 4em;
-    color: rgba(255,255,255,.75);
-    background-color: rgb(25,25,25);
+    background-color:antiquewhite;
 }
 
-.line-1{
-    width: 2em;
-    margin: 0 auto;
-    border-right: 2px solid rgba(255,255,255,.75);
-    font-size: 180%;
-    white-space: nowrap;
-    overflow: hidden;
-    transform: translateY(-50%);
-    display:inline-block;
-}
-
-/* Animation */
-.anim-typewriter{
-    animation: typewriter 1s steps(14) 1s 1 normal both,
-    blinkTextCursor 500ms steps(24) infinite normal;
-}
-@keyframes typewriter{
-    from{width: 0;}
-    to{width: 5em;}
-}
-@keyframes blinkTextCursor{
-    from{border-right-color: rgba(255,255,255,.75);}
-    to{border-right-color: transparent;}
-}
-
-
-
-.button-6 {
-    align-items: center;
-    background-color: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: .25rem;
-    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
-    box-sizing: border-box;
-    color: rgba(0, 0, 0, 0.85);
-    cursor: pointer;
-    display: inline-flex;
-    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    justify-content: center;
-    line-height: 1.25;
-    margin: 0;
-    min-height: 3rem;
-    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-    position: relative;
+.navi {
     text-decoration: none;
-    transition: all 250ms;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: baseline;
-    width: auto;
+    border: solid;
+    margin: .5vh;
+    border-width: 1px;
+    padding:.5vh;
+    left: auto;
+    right: 0px;
+    float:right;
+    font-size:calc(10px + 0.5vw);
+    z-index: 50;
+
+}
+.navi:visited {
+    color: black;
+}
+.navi:hover {
+    background-color: #c4c7c0;
 }
 
-.button-6:hover,
-.button-6:focus {
-    border-color: rgba(0, 0, 0, 0.15);
-    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-    color: rgba(0, 0, 0, 0.65);
+.header {
+    display: flex;
+    width: 100%;
+    top: 0;
+    border-width:0px;
+    border-bottom-width: 1px;
+    border-style: solid;
+    z-index: 50;
+    background: wheat;
 }
 
-.button-6:hover {
-    transform: translateY(-1px);
+#links {
+    width:100%;
+    left:auto;
+    right:0;
+    margin-top: 0.5%;
+    z-index: 50;
 }
 
-.button-6:active {
-    background-color: #F0F0F1;
-    border-color: rgba(0, 0, 0, 0.15);
-    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
-    color: rgba(0, 0, 0, 0.65);
-    transform: translateY(0);
+#name {
+    padding-left: 2px;
+    text-decoration: none;
+    font-size:calc(12px + 1.2vw);
+    width: 50%;
+    display: flex;
+    align-items:center;
+
+}
+
+#name:visited {
+    color: black;
+}
+
+* {
+    margin-top:0;
+    font-family: "Lato", sans-serif;
+}
+
+.page {
+    position: static;
+    width:100%;
+
+}
+
+#home {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+
+
+}
+
+#profile {
+    width:100%;
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row:1;
+    display: flex;
+    align-items:center;
+}
+#aboutme {
+    width:100%;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    display:flex;
+    align-items: center;
+
 }

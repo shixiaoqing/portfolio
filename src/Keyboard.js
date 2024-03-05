@@ -213,18 +213,21 @@ class Keyboard extends Component{
         }
         r4.push(<Key mapping={this.miscKeys[11]}/>)
         return(
-            <div id={"keyboardBg"}>
-                <div className={"rows"}>
-                    {r1}
-                </div>
-                <div className={"rows"}>
-                    {r2}
-                </div>
-                <div className={"rows"}>
-                    {r3}
-                </div>
-                <div className={"rows"}>
-                    {r4}
+            <div className={"keyboard"}>
+                <div class={"front"}>
+                    <div className={"rows"}>
+                        {r1}
+                    </div>
+                    <div className={"rows"}>
+                        {r2}
+                    </div>
+                    <div className={"rows"}>
+                        {r3}
+                    </div>
+                    <div className={"rows"}>
+                        {r4}
+                    </div>
+
                 </div>
 
             </div>
