@@ -11,21 +11,23 @@ class Home extends Component{
 
             <div id ={"home"}>
                 <div id={"profile"}>
-                    <h1>Hello, my name is Helen Shi and I am a Software Developer.
-                    <br/>This website is under constant construction! (So forgive how bad it looks.)</h1>
+                    <img id={"face"} src={process.env.PUBLIC_URL + '/Face.png'}/>
+                    <h1> Software Developer</h1><br/>
+                    <a href={"https://drive.google.com/file/d/1HeprAno77g0FTFszz6Qycsu-UgfHrHeN/view?usp=sharing"}><h3 >-> View Resume</h3></a>
+
                 </div>
-                <div id={"aboutme"}>
-                    <p>Under my 'Projects' tab, you can find my Zhuyin Keyboard project.
+                <div id={"more"}>
+                    Hi my name is Helen, I'm a Software Developer and an artist.
 
                     <br/><br/>
-                    Zhuyin, commonly known as 'bopomofo', is sound-based writing system that is commonly used in Taiwan.<br/>
-                    I created this project because despite being a fast typer in English, I could not type quickly in Chinese.<br/>
-                    I could not find a resource to help me learn how to type faster
-                    with Zhuyin while I was studying in Taiwan. So I decided to create one.<br/>
-                    Now instead of spending hours memorizing the Zhuyin keyboard, I spent hours programming something that would help me
-                    (and more importantly, other people) learn the Zhuyin keyboard!<br/>
-                    Right now, I have removed the feature which will show you the correct key to develop the feature for sentence typing.
-                    </p>
+                    I created this website to serve as my portfolio and to house my project(s). Under 'Projects'
+                    you can see the project I'm currently creating. At time of writing, there is only one project,
+                    "Zhuyin Type". I created this project because I wanted to learn how to type in Zhuyin faster and I
+                    couldn't find any resources to help me learn to memorize the keys/increase my WPM.
+                    <br/><br/>
+                    I plan to extend this project to other languages like Korean and I'm planning to add more features.
+                    <br/><br/>
+                    This website is a work in progress!
                 </div>
             </div>
         )

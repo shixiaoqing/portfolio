@@ -97,7 +97,7 @@ class TypeZhuyin extends Component {
             this.setState({subIndex: 0})
             // This section is for the character mode
             if (this.state.gameMode === Mode.Character && this.state.assist === Assist.Hint){
-                document.getElementById(query[this.state.index]['code']).style.backgroundColor = 'red';
+                document.getElementById(query[this.state.index]['code']).style.backgroundColor = "#F23869";
             }
         }
 
@@ -115,6 +115,12 @@ class TypeZhuyin extends Component {
         document.addEventListener("keydown", this._handleKeyDown)
         document.addEventListener("keyup", this._handleKeyRelease)
         this.generateQuery()
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener("keydown", this._handleKeyDown, false)
+        document.removeEventListener("keyup", this._handleKeyRelease, false)
+
     }
 
     handleModeSelection(mode) {
@@ -250,7 +256,8 @@ class TypeZhuyin extends Component {
                 <div>
                     {/*{this.settingScreen()}*/}
                     <div id={"container"}>
-                        <button onClick={() => this.changeModes()}>Switch Modes</button>
+                        <button className={"modeButton"} onClick={() => this.changeModes()}>Change Modes</button>
+                        <button className={"modeButton"} onClick={() => null}>Change Language (tba)</button>
                         <p>{this.memorizationPractice()}</p>
                         <Keyboard/>
                     </div>
